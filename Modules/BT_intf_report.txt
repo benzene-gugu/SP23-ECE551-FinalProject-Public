@@ -1,0 +1,24 @@
+Coverage Report Summary Data by file
+
+=================================================================================
+=== File: /filespace/m/mguo62/ece551/EX21/BT_intf.sv
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        20        20         0   100.00%
+    Statements                      34        34         0   100.00%
+    Toggles                         86        78         8    90.69%
+
+=================================================================================
+=== File: /filespace/m/mguo62/ece551/EX21/PB_release.sv
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         2         2         0   100.00%
+    Expressions                      2         2         0   100.00%
+    Statements                       8         8         0   100.00%
+    Toggles                          8         8         0   100.00%
+
+
+Total Coverage By File (code coverage only, filtered view): 97.87%
+

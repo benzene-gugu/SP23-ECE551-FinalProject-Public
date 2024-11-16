@@ -1,0 +1,54 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'Equalizer' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : Equalizer
+Version: T-2022.03-SP3
+Date   : Sat Apr 29 20:11:35 2023
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: iI2S/vld_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: iDRV/lft_reg_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  Equalizer          16000                 saed32lvt_tt0p85v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  iI2S/vld_reg/CLK (DFFARX1_LVT)           0.00 #     0.00 r
+  iI2S/vld_reg/QN (DFFARX1_LVT)            0.06       0.06 f
+  U11106/Y (AO22X1_LVT)                    0.05       0.11 f
+  iDRV/lft_reg_reg[4]/D (DFFARX1_LVT)      0.01       0.12 f
+  data arrival time                                   0.12
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.12       0.12
+  iDRV/lft_reg_reg[4]/CLK (DFFARX1_LVT)
+                                           0.00       0.12 r
+  library hold time                       -0.01       0.11
+  data required time                                  0.11
+  -----------------------------------------------------------
+  data required time                                  0.11
+  data arrival time                                  -0.12
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+1

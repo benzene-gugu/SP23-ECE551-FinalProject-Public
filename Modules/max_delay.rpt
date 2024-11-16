@@ -1,0 +1,83 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : Equalizer
+Version: T-2022.03-SP3
+Date   : Sat Apr 29 20:11:35 2023
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: iSLD/VOLUME_reg[11]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: iDRV/rght_reg_reg[15]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  Equalizer          16000                 saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  iSLD/VOLUME_reg[11]/CLK (DFFARX1_LVT)                   0.00 #     0.00 r
+  iSLD/VOLUME_reg[11]/QN (DFFARX1_LVT)                    0.09       0.09 r
+  U14526/Y (INVX1_LVT)                                    0.07       0.16 f
+  U3436/Y (AND2X1_LVT)                                    0.07       0.23 f
+  U3435/Y (AND3X1_LVT)                                    0.06       0.29 f
+  iEQ/mult_377/S2_2_10/S (FADDX1_LVT)                     0.12       0.42 r
+  U13076/Y (XNOR3X1_LVT)                                  0.14       0.56 r
+  iEQ/mult_377/S2_4_8/CO (FADDX1_LVT)                     0.09       0.64 r
+  iEQ/mult_377/S2_5_8/S (FADDX1_LVT)                      0.12       0.76 f
+  iEQ/mult_377/S2_6_7/S (FADDX1_LVT)                      0.11       0.88 r
+  iEQ/mult_377/S2_7_6/S (FADDX1_LVT)                      0.11       0.99 f
+  iEQ/mult_377/S2_8_5/S (FADDX1_LVT)                      0.11       1.10 r
+  iEQ/mult_377/S2_9_4/S (FADDX1_LVT)                      0.11       1.21 f
+  U13070/Y (XNOR3X1_LVT)                                  0.13       1.34 f
+  iEQ/mult_377/S2_11_2/S (FADDX1_LVT)                     0.12       1.46 r
+  iEQ/mult_377/S2_12_1/CO (FADDX1_LVT)                    0.08       1.54 r
+  iEQ/mult_377/S2_13_1/CO (FADDX1_LVT)                    0.09       1.64 r
+  iEQ/mult_377/S2_14_1/CO (FADDX1_LVT)                    0.09       1.73 r
+  iEQ/mult_377/S4_1/S (FADDX1_LVT)                        0.12       1.85 f
+  U13072/Y (XOR2X1_LVT)                                   0.09       1.95 r
+  U11173/Y (NAND3X0_LVT)                                  0.05       2.00 f
+  U11159/Y (OA21X1_LVT)                                   0.07       2.07 f
+  U12565/Y (OAI21X1_LVT)                                  0.08       2.15 r
+  U11153/Y (AO21X1_LVT)                                   0.06       2.21 r
+  U11148/Y (AO21X1_LVT)                                   0.06       2.27 r
+  U11143/Y (AO21X1_LVT)                                   0.06       2.32 r
+  U11138/Y (AO21X1_LVT)                                   0.06       2.38 r
+  U11130/Y (AO21X1_LVT)                                   0.06       2.44 r
+  U11125/Y (AOI21X1_LVT)                                  0.06       2.50 f
+  U11121/Y (OA21X1_LVT)                                   0.05       2.55 f
+  U11120/Y (NAND2X0_LVT)                                  0.04       2.59 r
+  U14583/Y (INVX0_LVT)                                    0.02       2.61 f
+  U11115/Y (OA21X1_LVT)                                   0.05       2.67 f
+  U13883/Y (XNOR2X1_LVT)                                  0.08       2.75 r
+  U11113/Y (AO22X1_LVT)                                   0.04       2.80 r
+  iDRV/rght_reg_reg[15]/D (DFFARX1_LVT)                   0.01       2.81 r
+  data arrival time                                                  2.81
+
+  clock clk (rise edge)                                   3.00       3.00
+  clock network delay (ideal)                             0.00       3.00
+  clock uncertainty                                      -0.12       2.88
+  iDRV/rght_reg_reg[15]/CLK (DFFARX1_LVT)                 0.00       2.88 r
+  library setup time                                     -0.03       2.85
+  data required time                                                 2.85
+  --------------------------------------------------------------------------
+  data required time                                                 2.85
+  data arrival time                                                 -2.81
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.04
+
+
+1

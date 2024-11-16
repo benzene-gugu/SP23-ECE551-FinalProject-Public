@@ -1,0 +1,48 @@
+Sat Apr 29 13:45:14 CDT 2023
+Trace back: ** Warning: (vmap-14) Failed to open "C:/Users/diana/Desktop/551_final_proj/SP23-ECE551-Final-Project/Modules/551??final0.mpf" specified by the MODELSIM environment variable.
+
+Copying D:/hls/modelsim_ase/win32aloem/../modelsim.ini to C:/Users/diana/Desktop/551_final_proj/SP23-ECE551-Final-Project/Modules/551??final0.mpf
+** Error: (vmap-7) Failed to open ini file "C:/Users/diana/Desktop/551_final_proj/SP23-ECE551-Final-Project/Modules/551??final0.mpf" in write mode.
+
+Invalid argument. (errno = EINVAL)
+** Error: (vmap-20) Cannot access for writing file "C:/Users/diana/Desktop/551_final_proj/SP23-ECE551-Final-Project/Modules/551??final0.mpf".
+
+Invalid argument. (errno = EINVAL)
+child process exited abnormally
+    while executing
+"exec $vmap -quiet work $Project(CurProj_DefaultLib)"
+    (procedure "Project::create" line 158)
+    invoked from within
+"Project::create $Project(dlg_proj_location) $Project(CurProj_NewName) $Project(dlg_proj_libname) $Project(dlg_initial_ini) $Project(dlg_ini_copy)"
+    (procedure "Project::applyCreate" line 3)
+    invoked from within
+"Project::applyCreate .pcd"
+    invoked from within
+".pcd.bb.button0 invoke"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel #0 [list $w invoke]"
+    (procedure "tk::ButtonUp" line 24)
+    invoked from within
+"tk::ButtonUp .pcd.bb.button0"
+    (command bound to event)
+  <2:D:/hls/modelsim_ase/win32aloem/tk8.5/bgerror.tcl:92: ::tkerror {** Warning: (vmap-14) Failed to open "C:/Users/diana/Desktop/551_final_proj/SP23-ECE551-Final-Project/Modules/551??final0.mpf" specified by the MODELSIM environment variable.
+
+Copying D:/hls/modelsim_ase/win32aloem/../modelsim.ini to C:/Users/diana/Desktop/551_final_proj/SP23-ECE551-Final-Project/Modules/551??final0.mpf
+** Error: (vmap-7) Failed to open ini file "C:/Users/diana/Desktop/551_final_proj/SP23-ECE551-Final-Project/Modules/551??final0.mpf" in write mode.
+
+Invalid argument. (errno = EINVAL)
+** Error: (vmap-20) Cannot access for writing file "C:/Users/diana/Desktop/551_final_proj/SP23-ECE551-Final-Project/Modules/551??final0.mpf".
+
+Invalid argument. (errno = EINVAL)
+child process exited abnormally}
+  <1:proc:70: ::tk::dialog::error::bgerror {** Warning: (vmap-14) Failed to open "C:/Users/diana/Desktop/551_final_proj/SP23-ECE551-Final-Project/Modules/551??final0.mpf" specified by the MODELSIM environment variable.
+
+Copying D:/hls/modelsim_ase/win32aloem/../modelsim.ini to C:/Users/diana/Desktop/551_final_proj/SP23-ECE551-Final-Project/Modules/551??final0.mpf
+** Error: (vmap-7) Failed to open ini file "C:/Users/diana/Desktop/551_final_proj/SP23-ECE551-Final-Project/Modules/551??final0.mpf" in write mode.
+
+Invalid argument. (errno = EINVAL)
+** Error: (vmap-20) Cannot access for writing file "C:/Users/diana/Desktop/551_final_proj/SP23-ECE551-Final-Project/Modules/551??final0.mpf".
+
+Invalid argument. (errno = EINVAL)
+child process exited abnormally}

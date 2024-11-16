@@ -1,0 +1,37 @@
+Recursive Coverage Report Summary Data by instance
+
+=================================================================================
+=== Instance: /slide_intf_tb/iDUT/iA2D_intf
+=== Design Unit: work.A2D_intf
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        18        18         0   100.00%
+    Statements                      19        19         0   100.00%
+    Toggles                         72        72         0   100.00%
+
+=================================================================================
+=== Instance: /slide_intf_tb/iDUT
+=== Design Unit: work.slide_intf
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        55        55         0   100.00%
+    Conditions                       1         1         0   100.00%
+    Statements                      64        64         0   100.00%
+    Toggles                        280       142       138    50.71%
+
+=================================================================================
+=== Instance: /slide_intf_tb
+=== Design Unit: work.slide_intf_tb
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        55        55         0   100.00%
+    Conditions                       1         1         0   100.00%
+    Statements                      64        64         0   100.00%
+    Toggles                        280       142       138    50.71%
+
+
+Total Coverage By Instance (filtered view): 87.67%
+

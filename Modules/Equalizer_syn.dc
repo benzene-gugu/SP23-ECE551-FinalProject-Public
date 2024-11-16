@@ -1,0 +1,79 @@
+# Settings before compile
+set compile_seqmap_enable_output_inversion true
+
+# Read in the Verilog files
+read_file -format sverilog {rst_synch.sv \
+I2S_Serf.sv \
+PDM.sv spkr_drv.sv \
+SPI_mnrch.sv A2D_intf.sv slide_intf.sv \
+cmdROM.v UART.sv snd_cmd.sv PB_release.sv BT_intf.sv \
+band_scale.sv ROM_LP.v ROM_B1.v ROM_B2.v ROM_B3.v ROM_HP.v FIR_x.sv \
+dualPort1024x16.v dualPort1536x16.v rise_edge_detector.sv prescalar_2_to_1.sv low_freq_queue.sv high_freq_queue.sv \
+EQ_engine_Yuc.sv Equalizer_syn.sv}
+
+# Set the current design
+set current_design Equalizer
+
+# link to proper references
+link
+
+# Create clock constraints on the design
+create_clock -name "clk" -period 3 -waveform {0 1.5} {clk}
+set_dont_touch_network [find port clk]
+
+# Set the clock uncertainty
+set_clock_uncertainty 0.125 clk
+
+# Allow the design to meet minimum timing requirements
+set_fix_hold clk
+
+# Set additional don't touch modules and networks
+set_dont_touch_network [get_net iRST/rst_n]
+set_dont_touch [find design dualPort*]
+set_dont_touch [find design ROM_*]
+set_dont_touch [find design cmdROM]
+
+# Set the input delays
+set prim_inputs [remove_from_collection [remove_from_collection [all_inputs] [find port clk]] [find port rst_n]]
+set_input_delay -clock clk 0.75 $prim_inputs
+
+# Set the input drive strength
+set_driving_cell -lib_cell NAND2X1_LVT -library saed32lvt_tt0p85v25c $prim_inputs
+
+# Set the output delays
+set_output_delay -clock clk 0.75 [all_outputs]
+
+# Set the output capacitance
+set_load 50 [all_outputs]
+
+# Set the max transition time for the nodes
+set_max_transition 0.125 [current_design]
+
+# Set the wire load to estimate parastic capacitance
+set_wire_load_model -name 16000 -library saed32lvt_tt0p85v25c
+
+# Resolve multiple references
+uniquify
+
+# Compile the design
+compile -map_effort high
+
+# Flatten the design
+ungroup -all -flatten
+
+# Recompile the design after flatten the design
+compile -area_effort high
+compile -area_effort high -incremental_mapping
+compile -area_effort high -incremental_mapping
+
+# Create minimum delay report
+report_timing -delay min > min_delay.rpt
+
+# Create maximum delay report
+report_timing -delay max > max_delay.rpt
+
+# Create area report
+report_area > area.rpt
+
+# Write out the resulting synthesized netlist
+write -format verilog Equalizer -output Equalizer.vg
